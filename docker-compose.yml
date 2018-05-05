@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 services:
   web:
     image: nginx:1.13.8-alpine
@@ -15,9 +15,11 @@ services:
     volumes_from:
       - php
   php:
-    build: php-7.0-fpm-custom
+    build: php-7.1
     environment:
       - TYPO3_CONTEXT=Development/Docker
+      - COMPOSER=/var/www/html/vendor/composer.json
+      - COMPOSER_VENDOR_DIR=/var/www/html/vendor
     links:
       - db
     volumes:
