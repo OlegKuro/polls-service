@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
     ulimits:
       nproc: 50000
     environment:
@@ -28,7 +28,9 @@ services:
     image: mysql:5.6
     environment:
       - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=polls_application
     volumes:
       - ./mysql:/var/lib/mysql
+      # - ./initdb.d here we'll add sql template table creation
     ports:
       - "3306:3306"
