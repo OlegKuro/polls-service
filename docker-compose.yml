@@ -28,9 +28,9 @@ services:
     image: mysql:5.6
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=polls_application
     volumes:
-      - ./mysql:/var/lib/mysql
-      # - ./initdb.d here we'll add sql template table creation
+      - ./mysql.d/conf.d:/etc/mysql/conf.d
+      - ./mysql.d/initdb.d:/docker-entrypoint-initdb.d
+      - ./mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
