@@ -8,8 +8,8 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-    ulimits:
-      nproc: 50000
+    # ulimits:
+    #   nproc: 50000
     environment:
       TZ: Europe/Moscow
     volumes_from:
