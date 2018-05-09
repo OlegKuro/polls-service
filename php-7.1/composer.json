@@ -1,5 +1,6 @@
 {
     "require": {
-        "doctrine/orm": "*"
+      "filp/whoops": ">=2.1.14",
+      "nikic/fast-route": ">=1.3.0"
     }
 }

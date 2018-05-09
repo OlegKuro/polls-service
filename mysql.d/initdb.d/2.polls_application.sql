@@ -12,7 +12,7 @@ CREATE TABLE `UserData` (
   `city` VARCHAR(255) NOT NULL,
   `birth_date` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `Polls`;
 

@@ -1,3 +1,4 @@
 mysql_data
 vk_proj/vendor/*
 !vk_proj/vendor/composer.*
+php-7.1/.idea
