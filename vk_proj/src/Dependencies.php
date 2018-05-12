@@ -36,7 +36,7 @@ $injector->define(TemplateDirectory::class, [':rootDirectory' => ROOT_DIR]);
 
 $injector->define(
     DatabaseUrl::class,
-    [':url' => 'sqlite:///' . ROOT_DIR . '/storage/db.sqlite3']
+    [':url' => 'mysql://root:password@dockerlemp_db_1:3306/polls_application']
 );
 
 $injector->delegate(Connection::class, function () use ($injector): Connection {

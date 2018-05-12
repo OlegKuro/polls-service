@@ -16,6 +16,8 @@ services:
       - php
   php:
     build: php-7.2
+    environment:
+      TZ: Europe/Moscow
     links:
       - db
     volumes:

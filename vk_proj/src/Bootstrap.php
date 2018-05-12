@@ -40,7 +40,11 @@ switch ($routeInfo[0]) {
         $vars = $routeInfo[2];
         $injector = include('Dependencies.php');
         $controller = $injector->make($controllerName);
-        $response = $controller->$method($request, $vars);
+        try {
+        $controller->$method($request, $vars);
+        } catch (Exception $e) {
+            echo 'Выброшено исключение: ',  $e->getMessage(), "\n";
+        }
         break;
 }
 
