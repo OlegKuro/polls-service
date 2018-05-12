@@ -15,15 +15,13 @@ services:
     volumes_from:
       - php
   php:
-    build: php-7.1
-    environment:
-      - TYPO3_CONTEXT=Development/Docker
-      - COMPOSER=/var/www/html/vendor/composer.json
-      - COMPOSER_VENDOR_DIR=/var/www/html/vendor
+    build: php-7.2
     links:
       - db
     volumes:
       - ./vk_proj:/var/www/html
+    expose:
+      - 9000
   db:
     image: mysql:5.6
     environment:
